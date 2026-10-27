@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='utf-8'?>
+<XboxCatalog feedVersion="1.0" dataset="synthetic-demo" generatedOn="2026-10-20">
+  <Product sku="XBX-DEMO-0001" active="true">
+    <ProductName>Elden Ring</ProductName>
+    <Category>Action RPG</Category>
+    <Studio>FromSoftware</Studio>
+    <Distributor>Bandai Namco Entertainment</Distributor>
+    <LaunchDate>2022-02-25</LaunchDate>
+    <RetailPrice>59.99</RetailPrice>
+    <CurrencyCode>USD</CurrencyCode>
+    <AgeClassification>Mature 17+</AgeClassification>
+    <CustomerScore>4.7</CustomerScore>
+    <ConsoleFamily>Xbox Series X|S</ConsoleFamily>
+    <Artwork>https://example.com/game-images/xbox/0001.jpg</Artwork>
+    <FeedStatus>sample</FeedStatus>
+  </Product>
+  <Product sku="XBX-DEMO-0002" active="true">
+    <ProductName>Stardew Valley</ProductName>
+    <Category>Simulation</Category>
+    <Studio>ConcernedApe</Studio>
+    <Distributor>ConcernedApe</Distributor>
+    <LaunchDate>2016-02-26</LaunchDate>
+    <RetailPrice>14.99</RetailPrice>
+    <CurrencyCode>USD</CurrencyCode>
+    <AgeClassification>Everyone 10+</AgeClassification>
+    <CustomerScore>4.8</CustomerScore>
+    <ConsoleFamily>Xbox Series X|S</ConsoleFamily>
+    <Artwork>https://example.com/game-images/xbox/0002.jpg</Artwork>
+    <FeedStatus>sample</FeedStatus>
+  </Product>
+  <Product sku="XBX-DEMO-0003" active="true">
+    <ProductName>Hades</ProductName>
+    <Category>Roguelike</Category>
+    <Studio>Supergiant Games</Studio>
+    <Distributor>Supergiant Games</Distributor>
+    <LaunchDate>2020-09-17</LaunchDate>
+    <RetailPrice>24.99</RetailPrice>
+    <CurrencyCode>USD</CurrencyCode>
+    <AgeClassification>Teen</AgeClassification>
+    <CustomerScore>4.65</CustomerScore>
+    <ConsoleFamily>Xbox Series X|S</ConsoleFamily>
+    <Artwork>https://example.com/game-images/xbox/0003.jpg</Artwork>
+    <FeedStatus>sample</FeedStatus>
+  </Product>
+  <Product sku="XBX-DEMO-0004" active="true">
+    <ProductName>Hollow Knight</ProductName>
+    <Category>Metroidvania</Category>
+    <Studio>Team Cherry</Studio>
+    <Distributor>Team Cherry</Distributor>
+    <LaunchDate>2017-02-24</LaunchDate>
+    <RetailPrice>14.99</RetailPrice>
+    <CurrencyCode>USD</CurrencyCode>
+    <AgeClassification>Everyone 10+</AgeClassification>
+    <CustomerScore>4.75</CustomerScore>
+    <ConsoleFamily>Xbox Series X|S</ConsoleFamily>
+    <Artwork>https://example.com/game-images/xbox/0004.jpg</Artwork>
+    <FeedStatus>sample</FeedStatus>
+  </Product>
+  <Product sku="XBX-DEMO-0005" active="true">
+    <ProductName>Cyberpunk 2077</ProductName>
+    <Category>Action RPG</Category>
+    <Studio>CD PROJEKT RED</Studio>
+    <Distributor>CD PROJEKT RED</Distributor>
+    <LaunchDate>2020-12-10</LaunchDate>
+    <RetailPrice>59.99</RetailPrice>
+    <CurrencyCode>USD</CurrencyCode>
+    <AgeClassification>Mature 17+</AgeClassification>
+    <CustomerScore>4.25</CustomerScore>
+    <ConsoleFamily>Xbox Series X|S</ConsoleFamily>
+    <Artwork>https://example.com/game-images/xbox/0005.jpg</Artwork>
+    <FeedStatus>sample</FeedStatus>
+  </Product>
+  <Product sku="XBX-DEMO-0006" active="true">
+    <ProductName>Celeste</ProductName>
+    <Category>Platformer</Category>
+    <Studio>Maddy Makes Games</Studio>
+    <Distributor>Maddy Makes Games</Distributor>
+    <LaunchDate>2018-01-25</LaunchDate>
+    <RetailPrice>19.99</RetailPrice>
+    <CurrencyCode>USD</CurrencyCode>
+    <AgeClassification>Everyone 10+</AgeClassification>
+    <CustomerScore>4.6</CustomerScore>
+    <ConsoleFamily>Xbox Series X|S</ConsoleFamily>
+    <Artwork>https://example.com/game-images/xbox/0006.jpg</Artwork>
+    <FeedStatus>sample</FeedStatus>
+  </Product>
+  <Product sku="XBX-DEMO-0007" active="true">
+    <ProductName>Dead Cells</ProductName>
+    <Category>Roguelike</Category>
+    <Studio>Motion Twin</Studio>
+    <Distributor>Motion Twin</Distributor>
+    <LaunchDate>2018-08-07</LaunchDate>
+    <RetailPrice>24.99</RetailPrice>
+    <CurrencyCode>USD</CurrencyCode>
+    <AgeClassification>Teen</AgeClassification>
+    <CustomerScore>4.55</CustomerScore>
+    <ConsoleFamily>Xbox Series X|S</ConsoleFamily>
+    <Artwork>https://example.com/game-images/xbox/0007.jpg</Artwork>
+    <FeedStatus>sample</FeedStatus>
+  </Product>
+  <Product sku="XBX-DEMO-0008" active="true">
+    <ProductName>Baldur’s Gate 3</ProductName>
+    <Category>RPG</Category>
+    <Studio>Larian Studios</Studio>
+    <Distributor>Larian Studios</Distributor>
+    <LaunchDate>2023-08-03</LaunchDate>
+    <RetailPrice>59.99</RetailPrice>
+    <CurrencyCode>USD</CurrencyCode>
+    <AgeClassification>Mature 17+</AgeClassification>
+    <CustomerScore>4.85</CustomerScore>
+    <ConsoleFamily>Xbox Series X|S</ConsoleFamily>
+    <Artwork>https://example.com/game-images/xbox/0008.jpg</Artwork>
+    <FeedStatus>sample</FeedStatus>
+  </Product>
+  <Product sku="XBX-DEMO-0009" active="true">
+    <ProductName>No Man’s Sky</ProductName>
+    <Category>Exploration</Category>
+    <Studio>Hello Games</Studio>
+    <Distributor>Hello Games</Distributor>
+    <LaunchDate>2016-08-09</LaunchDate>
+    <RetailPrice>59.99</RetailPrice>
+    <CurrencyCode>USD</CurrencyCode>
+    <AgeClassification>Teen</AgeClassification>
+    <CustomerScore>4.1</CustomerScore>
+    <ConsoleFamily>Xbox Series X|S</ConsoleFamily>
+    <Artwork>https://example.com/game-images/xbox/0009.jpg</Artwork>
+    <FeedStatus>sample</FeedStatus>
+  </Product>
+  <Product sku="XBX-DEMO-0010" active="true">
+    <ProductName>Cuphead</ProductName>
+    <Category>Run and Gun</Category>
+    <Studio>Studio MDHR</Studio>
+    <Distributor>Studio MDHR</Distributor>
+    <LaunchDate>2017-09-29</LaunchDate>
+    <RetailPrice>19.99</RetailPrice>
+    <CurrencyCode>USD</CurrencyCode>
+    <AgeClassification>Everyone 10+</AgeClassification>
+    <CustomerScore>4.45</CustomerScore>
+    <ConsoleFamily>Xbox Series X|S</ConsoleFamily>
+    <Artwork>https://example.com/game-images/xbox/0010.jpg</Artwork>
+    <FeedStatus>sample</FeedStatus>
+  </Product>
+  <Product sku="XBX-DEMO-0011" active="true">
+    <ProductName>Ori and the Will of the Wisps</ProductName>
+    <Category>Platformer</Category>
+    <Studio>Moon Studios</Studio>
+    <Distributor>Xbox Game Studios</Distributor>
+    <LaunchDate>2020-03-11</LaunchDate>
+    <RetailPrice>29.99</RetailPrice>
+    <CurrencyCode>USD</CurrencyCode>
+    <AgeClassification>Everyone</AgeClassification>
+    <CustomerScore>4.55</CustomerScore>
+    <ConsoleFamily>Xbox Series X|S</ConsoleFamily>
+    <Artwork>https://example.com/game-images/xbox/0011.jpg</Artwork>
+    <FeedStatus>sample</FeedStatus>
+  </Product>
+  <Product sku="XBX-DEMO-0012" active="true">
+    <ProductName>Minecraft Dungeons</ProductName>
+    <Category>Action Adventure</Category>
+    <Studio>Mojang Studios</Studio>
+    <Distributor>Xbox Game Studios</Distributor>
+    <LaunchDate>2020-05-26</LaunchDate>
+    <RetailPrice>19.99</RetailPrice>
+    <CurrencyCode>USD</CurrencyCode>
+    <AgeClassification>Everyone 10+</AgeClassification>
+    <CustomerScore>3.95</CustomerScore>
+    <ConsoleFamily>Xbox Series X|S</ConsoleFamily>
+    <Artwork>https://example.com/game-images/xbox/0012.jpg</Artwork>
+    <FeedStatus>sample</FeedStatus>
+  </Product>
+</XboxCatalog>

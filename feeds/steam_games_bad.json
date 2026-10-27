@@ -1,0 +1,362 @@
+{
+  "feed_name": "steam_bad_validation_feed",
+  "generated_on": "2026-10-20",
+  "note": "Synthetic demonstration metadata. Images are placeholder URLs; not live assets.",
+  "games": [
+    {
+      "source_id": "STM-DEMO-0001",
+      "name": "  ",
+      "genres": [
+        "Action RPG"
+      ],
+      "developers": [
+        "FromSoftware"
+      ],
+      "publishers": [
+        "Bandai Namco Entertainment"
+      ],
+      "release_date": "2022-02-25",
+      "price_overview": {
+        "currency": "USD",
+        "final": 5999,
+        "discount_percent": 0
+      },
+      "required_age_label": "Mature 17+",
+      "review_score_pct": 94,
+      "supported_platforms": {
+        "windows": true,
+        "mac": false,
+        "linux": false
+      },
+      "header_image": "https://example.com/game-images/steam/0001.jpg",
+      "store_url": null,
+      "is_available": true,
+      "data_quality": "synthetic_example"
+    },
+    {
+      "source_id": "STM-DEMO-0002",
+      "name": "Stardew Valley",
+      "genres": [
+        "Simulation"
+      ],
+      "developers": [
+        "ConcernedApe"
+      ],
+      "publishers": [
+        "ConcernedApe"
+      ],
+      "release_date": "2026-02-30",
+      "price_overview": {
+        "currency": "USD",
+        "final": 1499,
+        "discount_percent": 0
+      },
+      "required_age_label": "Everyone 10+",
+      "review_score_pct": 96,
+      "supported_platforms": {
+        "windows": true,
+        "mac": false,
+        "linux": false
+      },
+      "header_image": "https://example.com/game-images/steam/0002.jpg",
+      "store_url": null,
+      "is_available": true,
+      "data_quality": "synthetic_example"
+    },
+    {
+      "source_id": "STM-DEMO-0003",
+      "name": "Hades",
+      "genres": [
+        "Roguelike"
+      ],
+      "developers": [
+        "Supergiant Games"
+      ],
+      "publishers": [
+        "Supergiant Games"
+      ],
+      "release_date": "2020-09-17",
+      "price_overview": {
+        "currency": "USD",
+        "final": -250,
+        "discount_percent": 0
+      },
+      "required_age_label": "Teen",
+      "review_score_pct": 93,
+      "supported_platforms": {
+        "windows": true,
+        "mac": true,
+        "linux": false
+      },
+      "header_image": "https://example.com/game-images/steam/0003.jpg",
+      "store_url": null,
+      "is_available": true,
+      "data_quality": "synthetic_example"
+    },
+    {
+      "source_id": "STM-DEMO-0004",
+      "name": "Hollow Knight",
+      "genres": [
+        "Metroidvania"
+      ],
+      "developers": [
+        "Team Cherry"
+      ],
+      "publishers": [
+        "Team Cherry"
+      ],
+      "release_date": "2017-02-24",
+      "price_overview": {
+        "currency": "USD",
+        "final": 1499,
+        "discount_percent": 0
+      },
+      "required_age_label": "Everyone 10+",
+      "review_score_pct": 108,
+      "supported_platforms": {
+        "windows": true,
+        "mac": false,
+        "linux": true
+      },
+      "header_image": "https://example.com/game-images/steam/0004.jpg",
+      "store_url": null,
+      "is_available": true,
+      "data_quality": "synthetic_example"
+    },
+    {
+      "source_id": "STM-DEMO-0005",
+      "name": "Cyberpunk 2077",
+      "genres": [
+        "Action RPG"
+      ],
+      "developers": [
+        "CD PROJEKT RED"
+      ],
+      "publishers": [
+        "CD PROJEKT RED"
+      ],
+      "release_date": "2020-12-10",
+      "price_overview": {
+        "currency": "USDD",
+        "final": 5999,
+        "discount_percent": 0
+      },
+      "required_age_label": "Mature 17+",
+      "review_score_pct": 85,
+      "supported_platforms": {
+        "windows": true,
+        "mac": false,
+        "linux": false
+      },
+      "header_image": "https://example.com/game-images/steam/0005.jpg",
+      "store_url": null,
+      "is_available": true,
+      "data_quality": "synthetic_example"
+    },
+    {
+      "source_id": "STM-DEMO-0006",
+      "name": "Celeste",
+      "genres": [
+        "Platformer"
+      ],
+      "developers": [
+        "Maddy Makes Games"
+      ],
+      "publishers": [
+        "Maddy Makes Games"
+      ],
+      "release_date": "2018-01-25",
+      "price_overview": {
+        "currency": "USD",
+        "final": 1999,
+        "discount_percent": 0
+      },
+      "required_age_label": "Everyone 10+",
+      "review_score_pct": 92,
+      "supported_platforms": {
+        "windows": true,
+        "mac": true,
+        "linux": false
+      },
+      "header_image": "not a url",
+      "store_url": null,
+      "is_available": true,
+      "data_quality": "synthetic_example"
+    },
+    {
+      "source_id": "STM-DEMO-0007",
+      "name": "Dead Cells",
+      "genres": "Role Playing",
+      "developers": [
+        "Motion Twin"
+      ],
+      "publishers": [
+        "Motion Twin"
+      ],
+      "release_date": "2018-08-07",
+      "price_overview": {
+        "currency": "USD",
+        "final": 2499,
+        "discount_percent": 0
+      },
+      "required_age_label": "Teen",
+      "review_score_pct": 91,
+      "supported_platforms": {
+        "windows": true,
+        "mac": false,
+        "linux": false
+      },
+      "header_image": "https://example.com/game-images/steam/0007.jpg",
+      "store_url": null,
+      "is_available": true,
+      "data_quality": "synthetic_example"
+    },
+    {
+      "source_id": "STM-DEMO-0001",
+      "name": "Baldur’s Gate 3",
+      "genres": [
+        "RPG"
+      ],
+      "developers": [
+        "Larian Studios"
+      ],
+      "publishers": [
+        "Larian Studios"
+      ],
+      "release_date": "2023-08-03",
+      "price_overview": {
+        "currency": "USD",
+        "final": 5999,
+        "discount_percent": 0
+      },
+      "required_age_label": "Mature 17+",
+      "review_score_pct": 97,
+      "supported_platforms": {
+        "windows": true,
+        "mac": false,
+        "linux": true
+      },
+      "header_image": "https://example.com/game-images/steam/0008.jpg",
+      "store_url": null,
+      "is_available": true,
+      "data_quality": "synthetic_example"
+    },
+    {
+      "source_id": "STM-DEMO-0009",
+      "name": "No Man’s Sky",
+      "genres": [
+        "Exploration"
+      ],
+      "developers": [
+        "Hello Games"
+      ],
+      "publishers": [
+        "Hello Games"
+      ],
+      "release_date": "2016-08-09",
+      "price_overview": {
+        "currency": "USD",
+        "final": 5999,
+        "discount_percent": 0
+      },
+      "required_age_label": "Teen",
+      "review_score_pct": 82,
+      "supported_platforms": {
+        "windows": true,
+        "mac": true,
+        "linux": false
+      },
+      "header_image": "https://example.com/game-images/steam/0009.jpg",
+      "store_url": null,
+      "is_available": "yes",
+      "data_quality": "synthetic_example"
+    },
+    {
+      "source_id": "STM-DEMO-0010",
+      "name": "Cuphead",
+      "genres": [
+        "Run and Gun"
+      ],
+      "developers": [],
+      "publishers": [
+        "Studio MDHR"
+      ],
+      "release_date": "2017-09-29",
+      "price_overview": {
+        "currency": "USD",
+        "final": 1999,
+        "discount_percent": 0
+      },
+      "required_age_label": "Everyone 10+",
+      "review_score_pct": 89,
+      "supported_platforms": {
+        "windows": true,
+        "mac": false,
+        "linux": false
+      },
+      "header_image": "https://example.com/game-images/steam/0010.jpg",
+      "store_url": null,
+      "is_available": true,
+      "data_quality": "synthetic_example"
+    },
+    {
+      "source_id": "STM-DEMO-0011",
+      "name": "Ori and the Will of the Wisps",
+      "genres": [
+        "Platformer"
+      ],
+      "developers": [
+        "Moon Studios"
+      ],
+      "publishers": [
+        "Xbox Game Studios"
+      ],
+      "release_date": "2020-03-11",
+      "price_overview": {
+        "currency": "USD",
+        "final": "29.99",
+        "discount_percent": 0
+      },
+      "required_age_label": "Everyone",
+      "review_score_pct": 91,
+      "supported_platforms": {
+        "windows": true,
+        "mac": false,
+        "linux": false
+      },
+      "header_image": "https://example.com/game-images/steam/0011.jpg",
+      "store_url": null,
+      "is_available": true,
+      "data_quality": "synthetic_example"
+    },
+    {
+      "source_id": "STM-DEMO-0012",
+      "name": "Minecraft Dungeons",
+      "genres": [
+        "Action Adventure"
+      ],
+      "developers": [
+        "Mojang Studios"
+      ],
+      "publishers": [
+        "Xbox Game Studios"
+      ],
+      "price_overview": {
+        "currency": "USD",
+        "final": 1999,
+        "discount_percent": 0
+      },
+      "required_age_label": "Everyone 10+",
+      "review_score_pct": 79,
+      "supported_platforms": {
+        "windows": true,
+        "mac": true,
+        "linux": true
+      },
+      "header_image": "https://example.com/game-images/steam/0012.jpg",
+      "store_url": null,
+      "is_available": true,
+      "data_quality": "synthetic_example"
+    }
+  ]
+}
