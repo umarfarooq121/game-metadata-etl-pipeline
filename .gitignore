@@ -6,3 +6,5 @@ venv/
 .vscode/
 logs/output/
 .DS_Store
+# Downloaded game artwork
+images/downloads/

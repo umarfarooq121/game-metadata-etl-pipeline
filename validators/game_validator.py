@@ -1,4 +1,4 @@
-
+from images.image_processor import validate_image_url
 from datetime import datetime
 import math
 
@@ -65,6 +65,11 @@ def validate_game(game):
             errors.append("Rating must be numeric")
         elif not math.isfinite(rating) or not 0 <= rating <= 5:
             errors.append("Rating must be between 0 and 5")
+    # Rule 9: Image URL validation
+    image_url = game.get("image_url")
+
+    if not validate_image_url(image_url):
+        errors.append("Missing or invalid image URL")
 
     return errors
 

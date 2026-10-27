@@ -11,6 +11,7 @@ from logs.validation_logger import save_validation_results
 from validators.validation_report import generate_validation_report
 import json
 from pathlib import Path
+from images.image_pipeline import process_game_images
 
 
 def main():
@@ -99,7 +100,18 @@ def main():
         print("Game:", record["title"])
         print("Errors:", record["errors"])
 
-    # Step 6: Save validation results
+    
+    # Step 6: Image processing
+    print("\n--- IMAGE PROCESSING ---")
+
+    image_results = process_game_images(valid_games[:3])  # Limit to first 3 valid games for testing
+
+    print("\n--- IMAGE SUMMARY ---")
+    print("Successful:", image_results["successful"])
+    print("Failed:", image_results["failed"])
+
+
+    # Step 7: Save validation results
     save_validation_results(valid_games, rejected_games)
 
     
