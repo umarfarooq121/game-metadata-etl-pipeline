@@ -42,6 +42,7 @@ def main():
 
     valid_games = []
     rejected_games = []
+    seen_games = set()
 
     source_files = {
         "Steam": "steam_games.json",
@@ -53,16 +54,31 @@ def main():
 
         errors = validate_game(game)
 
+        platform = game.get("platform")
+        source_id = game.get("source_id")
+        
+        # Create a unique identifier for each listing
+        game_key = (platform, str(source_id))
+
+        # Check for duplicates
+        if source_id is not None and str(source_id).strip():
+
+            if game_key in seen_games:
+                errors.append("Duplicate game record")
+            else:
+                seen_games.add(game_key)
+
+        # Separate accepted and rejected records
         if not errors:
             valid_games.append(game)
         else:
             rejected_games.append({
-                "source_file": source_files.get(game["platform"]),
-                "platform": game["platform"],
-                "source_id": game.get("source_id"),
+                "source_file": source_files.get(platform),
+                "platform": platform,
+                "source_id": source_id,
                 "title": game.get("title"),
                 "errors": errors
-            })
+        })
 
     # Step 5: Display results
 
