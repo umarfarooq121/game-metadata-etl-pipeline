@@ -7,6 +7,7 @@ from normalisers.xbox_normaliser import normalise_xbox
 from normalisers.playstation_normaliser import normalise_playstation
 
 from validators.game_validator import validate_game
+from logs.validation_logger import save_validation_results
 
 
 def main():
@@ -95,6 +96,8 @@ def main():
         print("Game:", record["title"])
         print("Errors:", record["errors"])
 
+    # Step 6: Save validation results
+    save_validation_results(valid_games, rejected_games)
 
 if __name__ == "__main__":
     main()

@@ -3,7 +3,7 @@ import xml.etree.ElementTree as ET
 
 def parse_xbox():
 
-    tree = ET.parse("feeds/xbox_games.xml")
+    tree = ET.parse("feeds/xbox_games_bad.xml")
     root = tree.getroot()
 
     feed_info = {
