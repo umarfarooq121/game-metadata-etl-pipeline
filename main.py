@@ -8,6 +8,9 @@ from normalisers.playstation_normaliser import normalise_playstation
 
 from validators.game_validator import validate_game
 from logs.validation_logger import save_validation_results
+from validators.validation_report import generate_validation_report
+import json
+from pathlib import Path
 
 
 def main():
@@ -98,6 +101,26 @@ def main():
 
     # Step 6: Save validation results
     save_validation_results(valid_games, rejected_games)
+
+    
+    # Generate validation summary
+    report = generate_validation_report(
+        valid_games,
+        rejected_games
+    )
+
+    # Display summary
+    print("\n--- DATA QUALITY REPORT ---")
+    print(json.dumps(report, indent=4))
+
+    # Save summary
+    report_path = Path("logs/output/validation_summary.json")
+
+    with open(report_path, "w", encoding="utf-8") as file:
+        json.dump(report, file, indent=4)
+
+    print(f"Saved: {report_path}")
+
 
 if __name__ == "__main__":
     main()
