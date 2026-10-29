@@ -26,6 +26,8 @@ A Python data engineering project that parses, normalises, validates, enriches, 
 - Per-game transactions with automatic commit and rollback
 - Database error reporting with game identifiers
 - Continued processing of remaining games after a database error
+- Image metadata manifest saves resolved URLs and local paths
+- Restores saved image URLs when reusing downloaded images
 
 ## PostgreSQL Integration
 
