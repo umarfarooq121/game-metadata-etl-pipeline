@@ -13,6 +13,8 @@ import json
 from pathlib import Path
 from images.image_pipeline import process_game_images
 
+from database.game_loader import insert_game
+
 
 def main():
 
@@ -113,6 +115,18 @@ def main():
 
     # Step 7: Save validation results
     save_validation_results(valid_games, rejected_games)
+
+    # Step 8: Insert one validated game
+    print("\n--- DATABASE INSERT ---")
+
+    if valid_games:
+        game = valid_games[0]
+        game_id = insert_game(game)
+
+        print("Inserted game:", game["title"])
+        print("Database ID:", game_id)
+    else:
+        print("No valid games available to insert.")
 
     
     # Generate validation summary
