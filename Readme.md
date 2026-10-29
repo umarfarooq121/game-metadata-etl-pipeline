@@ -42,6 +42,8 @@ Connection settings are loaded from `.env`. Credentials are excluded from versio
 - Repeating that insertion will trigger the database's unique constraint.
 - Image processing is currently limited to the first three validated games during development.
 - Existing image files are reused, but their resolved image URLs are not automatically recovered.
+- Loads all validated games into PostgreSQL using parameterised SQL.
+- Skips existing database listings using platform and source ID.
 
 ## Planned Features
 
