@@ -14,6 +14,7 @@ from pathlib import Path
 from images.image_pipeline import process_game_images
 
 from database.game_loader import insert_game
+from psycopg import Error
 
 
 def main():
@@ -116,22 +117,37 @@ def main():
     # Step 7: Save validation results
     save_validation_results(valid_games, rejected_games)
 
-        # Step 8: Insert validated games
+    # Step 8: Insert validated games
     print("\n--- DATABASE LOAD ---")
 
     inserted = 0
     skipped = 0
+    failed = 0
 
     for game in valid_games:
-        game_id = insert_game(game)
+        try:
+            game_id = insert_game(game)
+
+        except Error as error:
+            failed += 1
+
+            print("\nDatabase load failed:")
+            print("Title:", game.get("title"))
+            print("Platform:", game.get("platform"))
+            print("Source ID:", game.get("source_id"))
+            print("Error:", error)
+
+            continue
 
         if game_id is not None:
             inserted += 1
         else:
             skipped += 1
 
+    print("\n--- DATABASE SUMMARY ---")
     print("Inserted:", inserted)
     print("Skipped existing:", skipped)
+    print("Failed:", failed)
 
     
     # Generate validation summary

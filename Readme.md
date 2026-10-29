@@ -1,7 +1,7 @@
 
 # Game Metadata ETL Pipeline
 
-A Python data engineering project that parses, normalises, validates, and enriches game metadata from multiple sources, with PostgreSQL loading under development.
+A Python data engineering project that parses, normalises, validates, enriches, and loads game metadata from multiple sources into PostgreSQL.
 
 ## Data Sources
 
@@ -21,8 +21,11 @@ A Python data engineering project that parses, normalises, validates, and enrich
 - RAWG image lookup and image downloading
 - Existing local image detection to skip repeat downloads
 - PostgreSQL connection using Psycopg 3
-- Single validated game insertion using a parameterised SQL query
-- Database connection and first inserted record verified locally
+- Loading all validated games using parameterised SQL queries
+- Skipping existing database listings using platform and source ID
+- Per-game transactions with automatic commit and rollback
+- Database error reporting with game identifiers
+- Continued processing of remaining games after a database error
 
 ## PostgreSQL Integration
 
@@ -31,28 +34,39 @@ The `game_metadata` database contains a `public.games` table for normalised game
 Database components:
 
 - `database/db_connection.py` — reusable connection function
-- `database/game_loader.py` — inserts one validated game
+- `database/game_loader.py` — inserts one game per call and skips existing listings
 - `test_db_connection.py` — checks database access and game count
+- `main.py` — loads validated games and reports inserted, skipped, and failed counts
+
+Each game is processed in a separate transaction. Successful insertions are committed. Failed transactions are rolled back without undoing previously committed games.
+
+A unique constraint on `(platform, source_id)` prevents duplicate listings. Check constraints reject negative prices and ratings outside 0–5.
 
 Connection settings are loaded from `.env`. Credentials are excluded from version control.
 
+## Validation and Database Checks
+
+- Python-to-PostgreSQL connection verified
+- First game insertion confirmed in pgAdmin
+- Full validated dataset loaded, with 28 records confirmed
+- Existing listing skipped during loading
+- Deliberately invalid price used to test database rejection and error handling
+
 ## Current Limitations
 
-- Database loading currently inserts only the first validated game.
-- Repeating that insertion will trigger the database's unique constraint.
-- Image processing is currently limited to the first three validated games during development.
+- Image processing is limited to the first three validated games during development.
 - Existing image files are reused, but their resolved image URLs are not automatically recovered.
-- Loads all validated games into PostgreSQL using parameterised SQL.
-- Skips existing database listings using platform and source ID.
+- Database loading opens a separate connection for each game.
+- Database load errors are displayed in the terminal but are not yet saved to a dedicated report.
+- Existing database listings are skipped; changed metadata is not updated.
 
 ## Planned Features
 
-- Load all validated games into PostgreSQL
-- Skip existing database listings during repeat runs
-- Improve database failure reporting and transaction handling
 - Persist image metadata across runs
+- Save database load errors and summaries to files
 - Connect PostgreSQL to Power BI
-- Expand RAWG integration and recurring ingestion
+- Expand RAWG integration
+- Improve recurring ingestion and error recovery
 
 ## Technologies
 
@@ -62,4 +76,6 @@ Power BI integration is planned.
 
 ## Project Status
 
-In development. Multi-source parsing, normalisation, validation, image enrichment, and initial PostgreSQL integration have been implemented. The first validated game has been inserted and confirmed in pgAdmin.
+In development. The pipeline processes synthetic feeds from three platforms, normalises and validates records, enriches selected games with artwork, and loads accepted records into PostgreSQL.
+
+Database loading supports duplicate skipping, per-game transactions, and error reporting. The current database contains 28 game listings.

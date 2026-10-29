@@ -3,7 +3,7 @@ from openpyxl import load_workbook
 def parse_playstation():
 
     workbook = load_workbook(
-        "feeds/playstation_games.xlsx",
+        "feeds/playstation_games_bad.xlsx",
         data_only=True
     )
 
