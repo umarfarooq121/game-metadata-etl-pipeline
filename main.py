@@ -116,17 +116,22 @@ def main():
     # Step 7: Save validation results
     save_validation_results(valid_games, rejected_games)
 
-    # Step 8: Insert one validated game
-    print("\n--- DATABASE INSERT ---")
+        # Step 8: Insert validated games
+    print("\n--- DATABASE LOAD ---")
 
-    if valid_games:
-        game = valid_games[0]
+    inserted = 0
+    skipped = 0
+
+    for game in valid_games:
         game_id = insert_game(game)
 
-        print("Inserted game:", game["title"])
-        print("Database ID:", game_id)
-    else:
-        print("No valid games available to insert.")
+        if game_id is not None:
+            inserted += 1
+        else:
+            skipped += 1
+
+    print("Inserted:", inserted)
+    print("Skipped existing:", skipped)
 
     
     # Generate validation summary

@@ -15,6 +15,7 @@ def insert_game(game):
             %s, %s, %s, %s,
             %s, %s, %s
         )
+        ON CONFLICT (platform, source_id) DO NOTHING
         RETURNING id;
     """
 
@@ -37,6 +38,6 @@ def insert_game(game):
 
     with get_connection() as conn:
         result = conn.execute(query, values).fetchone()
-        game_id = result[0]
+        game_id = result[0] if result else None
 
     return game_id
