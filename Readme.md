@@ -1,7 +1,7 @@
 
 # Game Metadata ETL Pipeline
 
-A Python data engineering project that parses, normalises, validates, enriches, and loads game metadata from multiple sources into PostgreSQL.
+A Python data engineering project that parses, normalises, validates, enriches, and loads game metadata from multiple sources into PostgreSQL, with interactive reporting in Power BI.
 
 ## Data Sources
 
@@ -9,6 +9,14 @@ A Python data engineering project that parses, normalises, validates, enriches, 
 - Xbox — synthetic XML feed
 - PlayStation — synthetic Excel feed
 - RAWG API — game image enrichment
+
+The three standard feeds contain 12 listings each, for a total of 36. Deliberately incorrect feeds are also used to test validation and error handling.
+
+## Pipeline Flow
+
+Source feeds → Parsing → Normalisation → Validation and duplicate detection → Image enrichment → JSON outputs and quality reports → PostgreSQL → Power BI
+
+Rejected records are saved separately with their validation errors.
 
 ## Current Features
 
@@ -20,14 +28,18 @@ A Python data engineering project that parses, normalises, validates, enriches, 
 - JSON validation logs and data-quality summaries
 - RAWG image lookup and image downloading
 - Existing local image detection to skip repeat downloads
+- Image metadata manifest stores resolved URLs and local paths
+- Restoration of saved image URLs when reusing downloaded images
 - PostgreSQL connection using Psycopg 3
 - Loading all validated games using parameterised SQL queries
 - Skipping existing database listings using platform and source ID
 - Per-game transactions with automatic commit and rollback
 - Database error reporting with game identifiers
 - Continued processing of remaining games after a database error
-- Image metadata manifest saves resolved URLs and local paths
-- Restores saved image URLs when reusing downloaded images
+- Power BI report connected to PostgreSQL using Import mode
+- Overview page with total listings, platform counts, average ratings, and genre counts
+- Platform slicers for interactive filtering
+- Game Details page for inspecting individual listings
 
 ## PostgreSQL Integration
 
@@ -46,38 +58,77 @@ A unique constraint on `(platform, source_id)` prevents duplicate listings. Chec
 
 Connection settings are loaded from `.env`. Credentials are excluded from version control.
 
+## Image Metadata
+
+The image manifest is stored at:
+
+`images/downloads/image_manifest.json`
+
+Each entry uses a platform and source ID key to store the resolved image URL and local file path.
+
+On subsequent runs, the pipeline reuses existing images and restores saved URLs when a manifest entry is available.
+
+## Power BI Report
+
+Report file:
+
+`reports/game_metadata_dashboard.pbix`
+
+### Overview
+
+- Total game listings
+- Listings by platform
+- Average rating by platform
+- Listings by genre
+- Platform slicer
+
+### Game Details
+
+- Title
+- Platform
+- Genre
+- Price and currency
+- User rating
+- Platform slicer
+
+The report uses Import mode. Select Refresh in Power BI Desktop to retrieve database changes.
+
+Counts represent platform listings. A title available on two platforms counts as two listings.
+
 ## Validation and Database Checks
 
 - Python-to-PostgreSQL connection verified
 - First game insertion confirmed in pgAdmin
-- Full validated dataset loaded, with 28 records confirmed
-- Existing listing skipped during loading
+- Validated records loaded into PostgreSQL
+- Existing listings skipped during loading
 - Deliberately invalid price used to test database rejection and error handling
+- Power BI platform counts compared with PostgreSQL query results
 
 ## Current Limitations
 
 - Image processing is limited to the first three validated games during development.
-- Existing image files are reused, but their resolved image URLs are not automatically recovered.
+- Images downloaded before the manifest existed may lack saved resolved URLs.
 - Database loading opens a separate connection for each game.
 - Database load errors are displayed in the terminal but are not yet saved to a dedicated report.
-- Existing database listings are skipped; changed metadata is not updated.
+- Existing database listings are skipped; changed metadata and newly restored image metadata are not updated in those rows.
+- Power BI data must be refreshed to reflect database changes.
+- Standard feed data is synthetic and does not represent market-wide trends.
 
 ## Planned Features
 
-- Persist image metadata across runs
 - Save database load errors and summaries to files
-- Connect PostgreSQL to Power BI
+- Support updates to existing database listings
 - Expand RAWG integration
 - Improve recurring ingestion and error recovery
 
 ## Technologies
 
-Python, JSON, XML, openpyxl, requests, Pillow, python-dotenv, Psycopg 3, PostgreSQL, and Git.
-
-Power BI integration is planned.
+Python, JSON, XML, openpyxl, requests, Pillow, python-dotenv, Psycopg 3, PostgreSQL, Power BI Desktop, and Git.
 
 ## Project Status
 
 In development. The pipeline processes synthetic feeds from three platforms, normalises and validates records, enriches selected games with artwork, and loads accepted records into PostgreSQL.
 
-Database loading supports duplicate skipping, per-game transactions, and error reporting. The current database contains 28 game listings.
+Database loading supports duplicate skipping, per-game transactions, and error reporting. Image metadata is persisted in a manifest for reuse across runs.
+
+The standard feeds contain 36 listings. Database totals depend on accepted records loaded across runs; rejected records are reported separately. Power BI provides overview and game-level reporting.
