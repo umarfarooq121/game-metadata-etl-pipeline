@@ -1,4 +1,3 @@
-
 # Game Metadata ETL Pipeline
 
 A Python data engineering project that parses, normalises, validates, enriches, and loads game metadata from multiple sources into PostgreSQL, with interactive reporting in Power BI.
@@ -40,6 +39,89 @@ Rejected records are saved separately with their validation errors.
 - Overview page with total listings, platform counts, average ratings, and genre counts
 - Platform slicers for interactive filtering
 - Game Details page for inspecting individual listings
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.14 — the version used during development
+- PostgreSQL and pgAdmin
+- Git
+- A RAWG API key for image enrichment
+- Power BI Desktop to view and edit the report
+
+### Download the Project
+
+```powershell
+git clone https://github.com/umarfarooq121/game-metadata-etl-pipeline.git
+cd game-metadata-etl-pipeline
+```
+
+### Install Python Dependencies
+
+Run from the project root:
+
+```powershell
+py -m pip install -r requirements.txt
+```
+
+This installs the libraries needed for Excel parsing, API requests, image processing, environment settings, and PostgreSQL connectivity.
+
+Database and environment configuration are also required before running the pipeline.
+
+### Create the Database and Table
+
+1. Open pgAdmin and connect to your PostgreSQL server.
+2. Right-click **Databases → Create → Database**.
+3. Name the database `game_metadata` and save.
+4. Open the Query Tool for `game_metadata`.
+5. Open `database/schema.sql` in the Query Tool and execute it.
+
+The script creates `public.games`, including its primary key, unique listing constraint, and price and rating checks.
+
+### Configure Environment Variables
+
+From the project root, copy the example settings file:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+If you already have a configured `.env`, keep that file instead.
+
+Open `.env` and enter your RAWG API key and PostgreSQL credentials. Update the host, port, and username if your PostgreSQL installation uses different settings.
+
+Never commit the real `.env` file.
+
+### Test the Database Connection
+
+Ensure PostgreSQL is running, then execute from the project root:
+
+```powershell
+py test_db_connection.py
+```
+
+The output should show the `game_metadata` database name and the current game count.
+
+### Run the Pipeline
+
+```powershell
+py main.py
+```
+
+The pipeline reads the feeds, normalises and validates records, processes images for the first three accepted games, saves validation outputs, and loads accepted records into PostgreSQL.
+
+Existing database listings are skipped. Review the terminal summary for inserted, skipped, and failed records.
+
+Generated validation files are saved under `logs/output/`. Downloaded images and their metadata manifest are saved under `images/downloads/`.
+
+### Open the Power BI Report
+
+Open `reports/game_metadata_dashboard.pbix` in Power BI Desktop.
+
+If necessary, update the PostgreSQL connection through **File → Options and settings → Data source settings** to match your local server and database, and provide your own credentials.
+
+Select **Home → Refresh** to retrieve your database records.
 
 ## PostgreSQL Integration
 
