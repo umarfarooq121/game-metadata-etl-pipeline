@@ -152,6 +152,16 @@ On subsequent runs, the pipeline reuses existing images and restores saved URLs 
 
 ## Power BI Report
 
+### Report Screenshots
+
+#### Overview
+
+![Game metadata overview](reports/screenshots/overview.png)
+
+#### Game Details
+
+![Game details table](reports/screenshots/game_details.png)
+
 Report file:
 
 `reports/game_metadata_dashboard.pbix`
