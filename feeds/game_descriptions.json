@@ -1,0 +1,23 @@
+[
+    {
+        "platform": "Steam",
+        "source_id": "STM-DEMO-0001",
+        "title": "Elden Ring",
+        "description": "A fantasy action role-playing game featuring open-world exploration, quests, and combat against challenging enemies.",
+        "description_source": "manually_written_demo"
+    },
+    {
+        "platform": "Steam",
+        "source_id": "STM-DEMO-0002",
+        "title": "Stardew Valley",
+        "description": "A farming simulation game where players grow crops, raise animals, fish, explore mines, and build relationships with townspeople.",
+        "description_source": "manually_written_demo"
+    },
+    {
+        "platform": "Steam",
+        "source_id": "STM-DEMO-0003",
+        "title": "Hades",
+        "description": "An action roguelike game featuring repeated escape attempts through the Greek underworld, combat, and changing combinations of abilities.",
+        "description_source": "manually_written_demo"
+    }
+]
