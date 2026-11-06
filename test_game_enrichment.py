@@ -1,8 +1,9 @@
 import json
 from pathlib import Path
+from datetime import datetime, timezone
 
 from ai.description_loader import load_game_descriptions
-from ai.game_enricher import enrich_game
+from ai.game_enricher import MODEL_NAME, enrich_game
 
 
 def test_game_enrichment():
@@ -20,6 +21,8 @@ def test_game_enrichment():
             "title": record["title"],
             "description": record["description"],
             "description_source": record["description_source"],
+            "ai_model": MODEL_NAME,
+            "enriched_at": datetime.now(timezone.utc).isoformat(),
             "ai_suggestions": suggestions,
         }
 

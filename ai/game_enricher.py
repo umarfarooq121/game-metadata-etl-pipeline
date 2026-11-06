@@ -1,8 +1,10 @@
 import json
 
+
 from ollama import Client
 from pydantic import BaseModel, Field
 
+MODEL_NAME = "gpt-oss:latest"
 
 class GameEnrichment(BaseModel):
     suggested_genre: str | None
@@ -17,7 +19,7 @@ def enrich_game(description):
     )
 
     response = client.chat(
-        model="gpt-oss:latest",
+        model=MODEL_NAME,
         messages=[
             {
                 "role": "system",
